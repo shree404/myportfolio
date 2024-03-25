@@ -6,7 +6,7 @@ import Contact from "./Pages/contact";
 function App() {
   return (
     <div className="flex justify-center bg-[#24272C] ">
-    <div className="p-10 max-w-4xl   rounded-xl shadow-md flex items-center space-x-4 border border-black-500">
+    <div className="p-10 max-w-4xl   rounded-xl shadow-md flex items-center space-x-4 ">
       <Home/>
       </div>
     </div>
