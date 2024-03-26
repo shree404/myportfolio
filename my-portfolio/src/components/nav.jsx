@@ -1,5 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import '../styles.css';
+
+
+
 function Nav(){
     return(
         <div className='ml-2 mt-4 gap-4 flex justify-center  '>
