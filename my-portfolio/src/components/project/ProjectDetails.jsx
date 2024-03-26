@@ -23,6 +23,7 @@ function ProjectDetails(){
                   <img src={hms} alt="logo of Hospital Management System" className=" w-32 h-32 object-cover  justify-center" />
                   </div>
                   <span>
+                  <p className="text-white font-bold tect-md flex justify-center">H-Store</p>
                     <p className="text-white mt-5">Real-time MERN-based project focused on remote healthcare facility status monitoring</p>
                   </span>
                   <div className="flex justify-center mt-5">
@@ -33,8 +34,9 @@ function ProjectDetails(){
                 <div className="flex justify-center">
                   <img src={PT} alt="logo of Productivity Tracker" className=" w-32 h-32 object-cover  justify-center" />
                   </div>
-                  <span>
-                    <p className="text-white mt-5"> MERN-based study tracking app</p>
+                  <span className="">
+                  <p className="text-white font-bold tect-md flex justify-center">Changivy</p>
+                    <p className="text-white mt-5 "> MERN-based study tracking app</p>
                   </span>
                   <div className="flex justify-center mt-5">
                   <img src={github} onClick={Productivity} alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
@@ -45,6 +47,7 @@ function ProjectDetails(){
                   <img src={DS} alt="logo of Digital Sambidhan" className=" w-32 h-32 object-cover  justify-center" />
                   </div>
                   <span>
+                    <p className="text-white font-bold tect-md flex justify-center">Digital Sambidhan</p>
                     <p className="text-white mt-5"> AI-based Nepali legal information system.</p>
                   </span>
                   <div className="flex justify-center mt-5">
@@ -56,7 +59,8 @@ function ProjectDetails(){
                   <img src={SR} alt="logo of Sasto Deal" className=" w-32 h-32 object-cover  justify-center" />
                   </div>
                   <span>
-                    <p className="text-white mt-5"> It is a E-Commerce Website</p>
+                  <p className="text-white font-bold tect-md  flex justify-center ">SastoDeal</p>
+                    <p className="text-white mt-5"> Revamped SastoDeal.com </p>
                   </span>
                   <div className="flex justify-center mt-5">
                   <img src={github} onClick={Sastodeal} alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
@@ -67,6 +71,7 @@ function ProjectDetails(){
                   <img src={DMS} alt="logo of Donation Management System" className=" w-32 h-32 object-cover  justify-center" />
                   </div>
                   <span>
+                  <p className="text-white font-bold tect-md flex justify-center">Daan-Griha</p>
                     <p className="text-white mt-5"> MERN-based platform connecting donors with NGOs for efficient donation management</p>
                   </span>
                   <div className="flex justify-center mt-5">

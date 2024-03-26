@@ -1,4 +1,6 @@
-import React from "react";
+import React ,{Component,Fragment} from "react";
+import Fade from 'react-reveal/Fade';
+
 import hms from '../images/hospital.png';
 import PT from '../images/productivity.jpg';
 import DS from '../images/sambidhan.jpg';
