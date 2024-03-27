@@ -3,6 +3,8 @@ import About from "./Pages/about";
 import Contact from "./Pages/contact";
 import Project from "./Pages/project";
 import Reveal from "./Pages/demo";
+import Barrier from "./components/Languages/barrier";
+import SkillsHead from "./components/Languages/skillsheader";
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
       <Home/>
       <About/>
       <Project/>
+      <SkillsHead/>
       </div>
       
     </div>

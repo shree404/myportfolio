@@ -1,10 +1,12 @@
 import React from "react";
 
 
-function Lang(){
+function Listoflang(){
     return(
-
+        <div>
+            
+        </div>
     )
 }
 
-export default Lang;
+export default Listoflang;
