@@ -10,10 +10,10 @@ function Project(){
     return(
         <div>
             <ProjectHead/>
-            <ProjectButton/>
-            <ProjectSlider/>
-            <div className="flex gap-60 justify-center">
-            <ProjectIcon/>
+            {/* <ProjectButton/> */}
+            {/* <ProjectSlider/> */}
+            <div className="justify-center">
+            {/* <ProjectIcon/> */}
             <ProjectDetails/>
             </div>
         </div>

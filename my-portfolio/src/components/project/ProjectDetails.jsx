@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Fade from 'react-reveal/Fade';
 import hms from '../images/hospital.png';
 import PT from '../images/productivity.jpg';
 import DS from '../images/sambidhan.jpg';
@@ -6,80 +7,88 @@ import SR from '../images/sastodeal.png';
 import DMS from '../images/donation.jpg';
 import github from '../images/githubicon.png';
 
-function ProjectDetails(){
-    const Productivity = () => {
-        window.location.href = 'https://github.com/shree404/Changeivy.git'; 
-      };
-      const Sastodeal = () => {
-        window.location.href = 'https://github.com/shree404/SastoDeal-revamp.git'; 
-      };
-      const DonationMS = () => {
-        window.location.href = 'https://github.com/shree404/Daan-Griha-Frontend.git'; 
-      };
-    return(
-        <div className="flex-col">
-            <div className="gap-4 w-64 h-80 bg-[#232732] border  p-4 rounded-md shadow-md  shadow-cyan-300/100 content-center mt-5 " OnC >
-                <div className="flex justify-center">
-                  <img src={hms} alt="logo of Hospital Management System" className=" w-32 h-32 object-cover  justify-center" />
-                  </div>
-                  <span>
-                  <p className="text-white font-bold tect-md flex justify-center">H-Store</p>
-                    <p className="text-white mt-5">Real-time MERN-based project focused on remote healthcare facility status monitoring</p>
-                  </span>
-                  <div className="flex justify-center mt-5">
-                  <img src={github}  alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
+function ProjectDetails() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const animateList = [hms, PT, DS, SR, DMS];
+    const descriptions = [
+        "Real-time MERN-based project focused on remote healthcare facility status monitoring",
+        "MERN-based study tracking app",
+        "AI-based Nepali legal information system",
+        "Revamped SastoDeal.com",
+        "MERN-based platform connecting donors with NGOs for efficient donation management"
+    ];
+    const titles = [
+        "Hospital Management System",
+        "Productivity Tracker",
+        "Digital Sambidhan",
+        "SastoDeal Revamp",
+        "Daan-Griha"
+    ];
+
+    const projectRepositories = [
+        null,
+        'https://github.com/shree404/Changeivy.git',
+        null,
+        'https://github.com/shree404/SastoDeal-revamp.git',
+        'https://github.com/shree404/Daan-Griha-Frontend.git',
+    ];
+
+    const goToGitHub = (index) => {
+        const repository = projectRepositories[index];
+        if (repository) {
+            window.open(repository, "_blank");
+        }
+    };
+    
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(prevIndex => (prevIndex + 1) % animateList.length);
+        }, 5000); // Change image every 5 seconds (adjust as needed)
+
+        return () => clearInterval(interval);
+    }, [animateList.length]);
+
+    const displayIndex = (index) => {
+        return (index + currentIndex) % animateList.length;
+    };
+
+    return (
+        <div className="flex justify-center mt-5">
+            <Fade>
+                <div className="flex gap-4">
+                    <div className="bg-[#232732] border p-4 rounded-md shadow-md shadow-cyan-300/100 content-center">
+                        <div className="flex justify-center">
+                            <img src={animateList[displayIndex(0)]} alt={`Project Icon 0`} className="w-32 h-32 object-cover" />
+                        </div>
+                        <span>
+                            <p className="text-white font-bold text-md flex justify-center">{titles[displayIndex(0)]}</p>
+                            <p className="text-white mt-2 text-sm">{descriptions[displayIndex(0)]}</p>
+                        </span>
+                        {projectRepositories[displayIndex(0)] && (
+                            <div className="flex justify-center mt-2">
+                                <img src={github} alt="Link to the Repository" onClick={() => goToGitHub(0)} className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 cursor-pointer" />
+                            </div>
+                        )}
+                    </div>
+                    <div className="bg-[#232732] border p-4 rounded-md shadow-md shadow-cyan-300/100 content-center">
+                        <div className="flex justify-center">
+                            <img src={animateList[displayIndex(1)]} alt={`Project Icon 1`} className="w-32 h-32 object-cover" />
+                        </div>
+                        <span>
+                            <p className="text-white font-bold text-md flex justify-center">{titles[displayIndex(1)]}</p>
+                            <p className="text-white mt-2 text-sm">{descriptions[displayIndex(1)]}</p>
+                        </span>
+                        {projectRepositories[displayIndex(1)] && (
+                            <div className="flex justify-center mt-2">
+                                <img src={github} alt="Link to the Repository" onClick={() => goToGitHub(1)} className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 cursor-pointer" />
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
-            <div className=" mt-5 gap-4 w-64 h-80 bg-[#232732] border  p-4 rounded-md shadow-md  shadow-cyan-300/100 content-center ">
-                <div className="flex justify-center">
-                  <img src={PT} alt="logo of Productivity Tracker" className=" w-32 h-32 object-cover  justify-center" />
-                  </div>
-                  <span className="">
-                  <p className="text-white font-bold tect-md flex justify-center">Changivy</p>
-                    <p className="text-white mt-5 "> MERN-based study tracking app</p>
-                  </span>
-                  <div className="flex justify-center mt-5">
-                  <img src={github} onClick={Productivity} alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
-                </div>
-            </div>
-            <div className=" mt-5 gap-4 w-64 h-80 bg-[#232732] border  p-4 rounded-md shadow-md  shadow-cyan-300/100 content-center ">
-                <div className="flex justify-center">
-                  <img src={DS} alt="logo of Digital Sambidhan" className=" w-32 h-32 object-cover  justify-center" />
-                  </div>
-                  <span>
-                    <p className="text-white font-bold tect-md flex justify-center">Digital Sambidhan</p>
-                    <p className="text-white mt-5"> AI-based Nepali legal information system.</p>
-                  </span>
-                  <div className="flex justify-center mt-5">
-                  <img src={github} alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
-                </div>
-            </div>
-            <div className="mt-5 gap-4 w-64 h-80 bg-[#232732] border  p-4 rounded-md shadow-md  shadow-cyan-300/100 content-center ">
-                <div className="flex justify-center">
-                  <img src={SR} alt="logo of Sasto Deal" className=" w-32 h-32 object-cover  justify-center" />
-                  </div>
-                  <span>
-                  <p className="text-white font-bold tect-md  flex justify-center ">SastoDeal</p>
-                    <p className="text-white mt-5"> Revamped SastoDeal.com </p>
-                  </span>
-                  <div className="flex justify-center mt-5">
-                  <img src={github} onClick={Sastodeal} alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
-                </div>
-            </div>
-            <div className=" mt-5 gap-4 w-64 h-80 bg-[#232732] border  p-4 rounded-md shadow-md  shadow-cyan-300/100 content-center ">
-                <div className="flex justify-center">
-                  <img src={DMS} alt="logo of Donation Management System" className=" w-32 h-32 object-cover  justify-center" />
-                  </div>
-                  <span>
-                  <p className="text-white font-bold tect-md flex justify-center">Daan-Griha</p>
-                    <p className="text-white mt-5"> MERN-based platform connecting donors with NGOs for efficient donation management</p>
-                  </span>
-                  <div className="flex justify-center mt-5">
-                  <img src={github} onClick={DonationMS} alt="Link to the Repository" className="rounded-full w-10 h-10 object-cover shadow-md shadow-cyan-100/100 " />
-                </div>
-            </div>
+            </Fade>
         </div>
-    )
+    );
 }
 
 export default ProjectDetails;
